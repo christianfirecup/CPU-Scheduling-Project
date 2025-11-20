@@ -81,10 +81,3 @@ Average Response Time: 5.75
 | 7 | 20 |  4 | 100.00 | 0.2000 | 10.75 | 5.75 | 5.75 |
 | 12 | 20 |  4 | 100.00 | 0.2000 | 10.75 | 5.75 | 5.75 |
 
-## Submission (per the project prompt)
-
-- A single **zip** containing:
-  - Your **code**
-  - This **README** (and/or a PDF version)
-  - **Screenshots** (or pasted output) of the program running on **five** different time quanta on the **same** process list
-- In your report, briefly **explain CPU scheduling** and how **Round Robin** works, **describe your implementation**, and **analyze** the five runs with respect to CPU utilization, throughput, average waiting time, and average turnaround time.
