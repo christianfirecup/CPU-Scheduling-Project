@@ -1,0 +1,76 @@
+﻿=== Round Robin CPU Scheduling Simulation ===
+Time quantum: 1
+Input processes (pid, arrive, burst):
+  P1: arrive=0, burst=5
+  P3: arrive=0, burst=2
+  P2: arrive=1, burst=7
+  P4: arrive=2, burst=6
+
+=== Event Log (timestamped) ===
+[t=0] P1 arrives (burst=5)
+[t=0] P3 arrives (burst=2)
+[t=0] P1 gets CPU first time (response)
+[t=0-1] P1 runs (remaining before=5, after=4)
+[t=1] P2 arrives (burst=7)
+[t=1] P3 gets CPU first time (response)
+[t=1-2] P3 runs (remaining before=2, after=1)
+[t=2] P4 arrives (burst=6)
+[t=2] P2 gets CPU first time (response)
+[t=2-3] P2 runs (remaining before=7, after=6)
+[t=3] Context switch to P1
+[t=3-4] P1 runs (remaining before=4, after=3)
+[t=4] P4 gets CPU first time (response)
+[t=4-5] P4 runs (remaining before=6, after=5)
+[t=5] Context switch to P3
+[t=5-6] P3 runs (remaining before=1, after=0)
+[t=6] P3 completes
+[t=6] Context switch to P2
+[t=6-7] P2 runs (remaining before=6, after=5)
+[t=7] Context switch to P1
+[t=7-8] P1 runs (remaining before=3, after=2)
+[t=8] Context switch to P4
+[t=8-9] P4 runs (remaining before=5, after=4)
+[t=9] Context switch to P2
+[t=9-10] P2 runs (remaining before=5, after=4)
+[t=10] Context switch to P1
+[t=10-11] P1 runs (remaining before=2, after=1)
+[t=11] Context switch to P4
+[t=11-12] P4 runs (remaining before=4, after=3)
+[t=12] Context switch to P2
+[t=12-13] P2 runs (remaining before=4, after=3)
+[t=13] Context switch to P1
+[t=13-14] P1 runs (remaining before=1, after=0)
+[t=14] P1 completes
+[t=14] Context switch to P4
+[t=14-15] P4 runs (remaining before=3, after=2)
+[t=15] Context switch to P2
+[t=15-16] P2 runs (remaining before=3, after=2)
+[t=16] Context switch to P4
+[t=16-17] P4 runs (remaining before=2, after=1)
+[t=17] Context switch to P2
+[t=17-18] P2 runs (remaining before=2, after=1)
+[t=18] Context switch to P4
+[t=18-19] P4 runs (remaining before=1, after=0)
+[t=19] P4 completes
+[t=19] Context switch to P2
+[t=19-20] P2 runs (remaining before=1, after=0)
+[t=20] P2 completes
+
+=== Per-Process Statistics ===
+PID   Arrive  Burst   Completion   Turnaround   Waiting      Response    
+1     0       5       14           14           9            0           
+3     0       2       6            6            4            1           
+2     1       7       20           19           12           1           
+4     2       6       19           17           11           2           
+
+=== Overall Performance Metrics ===
+Total processes: 4
+Total execution time: 20
+Context switches: 20
+Context switch time (per switch): 0
+Total idle time (incl. context switch time): 0
+CPU Utilization: 100.00%
+Throughput: 0.2000 processes per time unit
+Average Turnaround Time: 14.00
+Average Waiting Time: 9.00
+Average Response Time: 1.00

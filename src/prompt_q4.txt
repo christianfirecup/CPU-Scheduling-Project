@@ -1,0 +1,50 @@
+﻿=== Round Robin CPU Scheduling Simulation ===
+Time quantum: 4
+Input processes (pid, arrive, burst):
+  P1: arrive=0, burst=5
+  P3: arrive=0, burst=2
+  P2: arrive=1, burst=7
+  P4: arrive=2, burst=6
+
+=== Event Log (timestamped) ===
+[t=0] P1 arrives (burst=5)
+[t=0] P3 arrives (burst=2)
+[t=0] P1 gets CPU first time (response)
+[t=0-4] P1 runs (remaining before=5, after=1)
+[t=1] P2 arrives (burst=7)
+[t=2] P4 arrives (burst=6)
+[t=4] P3 gets CPU first time (response)
+[t=4-6] P3 runs (remaining before=2, after=0)
+[t=6] P3 completes
+[t=6] P2 gets CPU first time (response)
+[t=6-10] P2 runs (remaining before=7, after=3)
+[t=10] P4 gets CPU first time (response)
+[t=10-14] P4 runs (remaining before=6, after=2)
+[t=14] Context switch to P1
+[t=14-15] P1 runs (remaining before=1, after=0)
+[t=15] P1 completes
+[t=15] Context switch to P2
+[t=15-18] P2 runs (remaining before=3, after=0)
+[t=18] P2 completes
+[t=18] Context switch to P4
+[t=18-20] P4 runs (remaining before=2, after=0)
+[t=20] P4 completes
+
+=== Per-Process Statistics ===
+PID   Arrive  Burst   Completion   Turnaround   Waiting      Response    
+1     0       5       15           15           10           0           
+3     0       2       6            6            4            4           
+2     1       7       18           17           10           5           
+4     2       6       20           18           12           8           
+
+=== Overall Performance Metrics ===
+Total processes: 4
+Total execution time: 20
+Context switches: 7
+Context switch time (per switch): 0
+Total idle time (incl. context switch time): 0
+CPU Utilization: 100.00%
+Throughput: 0.2000 processes per time unit
+Average Turnaround Time: 14.00
+Average Waiting Time: 9.00
+Average Response Time: 4.25
